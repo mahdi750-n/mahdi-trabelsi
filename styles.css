@@ -1,0 +1,720 @@
+/* FSOCIETY Website Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-red: #ff0000;
+    --dark-red: #cc0000;
+    --light-red: #ff3333;
+    --bg-dark: #0a0e27;
+    --bg-darker: #050810;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --accent-green: #00ff00;
+    --border-color: #1a1f3a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Courier New', 'Courier', monospace;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(10, 14, 39, 0.95), rgba(10, 14, 39, 0.8));
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--primary-red);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-red);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.terminal-symbol {
+    color: var(--accent-green);
+    margin-right: 0.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-red);
+    border-bottom: 2px solid var(--primary-red);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-red);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.05) 0%, rgba(10, 14, 39, 1) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%230a0e27" width="1200" height="800"/><line x1="0" y1="0" x2="1200" y2="800" stroke="%23ff0000" stroke-width="0.5" opacity="0.05"/><line x1="1200" y1="0" x2="0" y2="800" stroke="%23ff0000" stroke-width="0.5" opacity="0.05"/></svg>');
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 0, 0, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+}
+
+.terminal-window {
+    background: rgba(5, 8, 16, 0.9);
+    border: 2px solid var(--primary-red);
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.3), inset 0 0 20px rgba(255, 0, 0, 0.05);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.terminal-header {
+    background: linear-gradient(to right, var(--primary-red), rgba(255, 0, 0, 0.5));
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--primary-red);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.terminal-title {
+    color: var(--bg-dark);
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.terminal-body {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.terminal-text {
+    color: var(--accent-green);
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.command-prompt {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.blinking-cursor {
+    animation: blink 1s infinite;
+    display: inline-block;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 2rem 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.4), 0 0 40px rgba(255, 0, 0, 0.2);
+}
+
+.hero-title .accent {
+    color: var(--primary-red);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.cta-button {
+    background: var(--primary-red);
+    color: var(--bg-dark);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    font-family: 'Courier New', monospace;
+}
+
+.cta-button:hover {
+    background: var(--dark-red);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+/* Sections */
+section {
+    padding: 5rem 0;
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+    color: var(--primary-red);
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+
+.section-divider {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary-red), transparent);
+    margin: 1.5rem 0 3rem 0;
+}
+
+/* Services Section */
+.services {
+    background: linear-gradient(180deg, rgba(10, 14, 39, 1) 0%, rgba(5, 8, 16, 1) 100%);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-card {
+    background: linear-gradient(135deg, rgba(26, 31, 58, 0.6) 0%, rgba(15, 20, 40, 0.6) 100%);
+    border: 2px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.service-card:hover {
+    border-color: var(--primary-red);
+    background: linear-gradient(135deg, rgba(26, 31, 58, 0.8) 0%, rgba(15, 20, 40, 0.8) 100%);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.3), inset 0 0 20px rgba(255, 0, 0, 0.05);
+    transform: translateY(-5px);
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-icon {
+    font-size: 2rem;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.service-code {
+    font-size: 0.85rem;
+    color: var(--accent-green);
+    background: rgba(0, 255, 0, 0.05);
+    padding: 0.75rem;
+    border-left: 2px solid var(--accent-green);
+    font-style: italic;
+}
+
+/* Agents Section */
+.agents {
+    background: linear-gradient(180deg, rgba(5, 8, 16, 1) 0%, rgba(10, 14, 39, 1) 100%);
+}
+
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.agent-card {
+    background: linear-gradient(135deg, rgba(26, 31, 58, 0.7) 0%, rgba(15, 20, 40, 0.7) 100%);
+    border: 2px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.agent-card:hover {
+    border-color: var(--primary-red);
+    background: linear-gradient(135deg, rgba(26, 31, 58, 0.9) 0%, rgba(15, 20, 40, 0.9) 100%);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+    transform: translateY(-8px);
+}
+
+.agent-avatar {
+    font-size: 2.5rem;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5rem;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.agent-card h3 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.agent-designation {
+    color: var(--primary-red);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.agent-bio {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.agent-stats {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.stat {
+    margin-bottom: 1rem;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.stat-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 0, 0, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary-red), var(--light-red));
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+/* Contracts Section */
+.contracts {
+    background: linear-gradient(180deg, rgba(10, 14, 39, 1) 0%, rgba(5, 8, 16, 1) 100%);
+}
+
+.contracts-list {
+    margin-top: 3rem;
+}
+
+.contract-item {
+    background: linear-gradient(135deg, rgba(26, 31, 58, 0.6) 0%, rgba(15, 20, 40, 0.6) 100%);
+    border-left: 4px solid var(--primary-red);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.contract-item:hover {
+    border-left-color: var(--light-red);
+    background: linear-gradient(135deg, rgba(26, 31, 58, 0.8) 0%, rgba(15, 20, 40, 0.8) 100%);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.2), inset 0 0 20px rgba(255, 0, 0, 0.05);
+    transform: translateX(10px);
+}
+
+.contract-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contract-id {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.contract-status {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.contract-status.active {
+    color: var(--accent-green);
+}
+
+.contract-status.completed {
+    color: var(--text-secondary);
+}
+
+.contract-title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.contract-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.detail-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.detail-label {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    min-width: 100px;
+}
+
+.detail-value {
+    color: var(--text-primary);
+    font-weight: bold;
+}
+
+.detail-value.critical {
+    color: var(--primary-red);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.detail-value.high {
+    color: var(--light-red);
+}
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(180deg, rgba(5, 8, 16, 1) 0%, rgba(10, 14, 39, 1) 100%);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.contact-form {
+    background: linear-gradient(135deg, rgba(26, 31, 58, 0.6) 0%, rgba(15, 20, 40, 0.6) 100%);
+    border: 2px solid var(--border-color);
+    padding: 2.5rem;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(5, 8, 16, 0.8);
+    border: 2px solid var(--border-color);
+    color: var(--text-primary);
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-red);
+    background: rgba(5, 8, 16, 0.95);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-red);
+    color: var(--bg-dark);
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    font-family: 'Courier New', monospace;
+}
+
+.submit-button:hover {
+    background: var(--dark-red);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
+    transform: translateY(-2px);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    color: var(--primary-red);
+}
+
+.info-block {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(26, 31, 58, 0.6) 0%, rgba(15, 20, 40, 0.6) 100%);
+    border-left: 3px solid var(--primary-red);
+    border-radius: 4px;
+}
+
+.info-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.info-value {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background: rgba(5, 8, 16, 1);
+    border-top: 2px solid var(--primary-red);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.footer-divider {
+    width: 80px;
+    height: 2px;
+    background: var(--primary-red);
+    margin: 1rem auto;
+}
+
+.footer-code {
+    color: var(--accent-green);
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .services-grid,
+    .agents-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .terminal-window {
+        max-width: 100%;
+    }
+
+    .contract-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contract-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .service-card,
+    .agent-card {
+        padding: 1.5rem;
+    }
+}
