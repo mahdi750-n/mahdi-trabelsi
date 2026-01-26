@@ -168,4 +168,7 @@ body {
   cursor: pointer;
   font-size: 18px;
 }
+* {
+  cursor: url("https://r2.guns.lol/c15fd13a-b2e6-486c-a506-0a99040ecfca.png") 16 16, auto;
+}
 
