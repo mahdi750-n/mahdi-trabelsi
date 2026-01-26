@@ -717,4 +717,36 @@ section {
         padding: 1.5rem;
     }
 }
+/* Dark Mode */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --card-bg: #f3f3f3;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.dark {
+  --bg-color: #0f172a;
+  --text-color: #e5e7eb;
+  --card-bg: #1e293b;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: var(--card-bg);
+  color: var(--text-color);
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+}
+
 
