@@ -1,60 +1,69 @@
 function playIntro(){
- document.getElementById("intro").play();
+ const intro = document.getElementById("intro");
+ if (intro) intro.play();
 }
 
-fetch("https://api.samp-servers.net/v2/servers/127.0.0.1:7777")
+// Server status
+fetch("https://api.samp-servers.net/v2/servers/YOUR_SERVER_IP:7777")
 .then(res => res.json())
 .then(data => {
- document.getElementById("players").innerText =
- "Players: " + data.players + "/" + data.maxplayers;
+ const playersEl = document.getElementById("players");
+ if (!playersEl) return;
+ playersEl.textContent = `Players: ${data.players}/${data.maxplayers}`;
 })
-.catch(()=> {
- document.getElementById("players").innerText = "Server Offline";
+.catch(() => {
+ const playersEl = document.getElementById("players");
+ if (playersEl) playersEl.textContent = "Server Offline";
 });
 
-document.getElementById("applyForm").addEventListener("submit", e=>{
- e.preventDefault();
- alert("Application sent!");
-});
+// Form
+const form = document.getElementById("applyForm");
+if (form) {
+ form.addEventListener("submit", e => {
+  e.preventDefault();
+  alert("Application sent!");
+ });
+}
+
+// Theme
 const toggleBtn = document.getElementById("theme-toggle");
 const body = document.body;
 
-// load saved theme
-if (localStorage.getItem("theme") === "dark") {
+if (toggleBtn) {
+ if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark");
   toggleBtn.textContent = "☀️";
-}
+ }
 
-toggleBtn.addEventListener("click", () => {
+ toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark");
-
-  if (body.classList.contains("dark")) {
-    localStorage.setItem("theme", "dark");
-    toggleBtn.textContent = "☀️";
-  } else {
-    localStorage.setItem("theme", "light");
-    toggleBtn.textContent = "🌙";
-  }
-});
-// Basic anti-bot
-if (navigator.webdriver) {
-  document.body.innerHTML = "";
+  const dark = body.classList.contains("dark");
+  localStorage.setItem("theme", dark ? "dark" : "light");
+  toggleBtn.textContent = dark ? "☀️" : "🌙";
+ });
 }
 
-if (/bot|crawl|spider|scanner/i.test(navigator.userAgent)) {
-  document.body.innerHTML = "";
+// Anti-bot
+const ua = navigator.userAgent.toLowerCase();
+if (
+ navigator.webdriver ||
+ (/bot|crawl|spider|scanner/i.test(ua) &&
+  !/googlebot|bingbot/i.test(ua))
+) {
+ document.body.innerHTML = "";
 }
-document.addEventListener('contextmenu', e => e.preventDefault());
 
-document.addEventListener('keydown', e => {
+// Basic protection
+if (window.innerWidth > 768) {
+ document.addEventListener("contextmenu", e => e.preventDefault());
+
+ document.addEventListener("keydown", e => {
   if (
-    e.key === 'F12' ||
-    (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) ||
-    (e.ctrlKey && e.key === 'U')
+   e.key === "F12" ||
+   (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key)) ||
+   (e.ctrlKey && e.key === "U")
   ) {
-    e.preventDefault();
+   e.preventDefault();
   }
-});
-
-
-
+ });
+}
