@@ -6,7 +6,19 @@
     <title>👾 Mahdi Trabelsi 👾 </title>
     <link rel="stylesheet" href="styles.css">
    <link rel="icon" href="logo1.png" type="image/png">
+<script>
+        
+        let text = "👾 Mahdi Trabelsi 👾 ";
+        let speed = 300; 
 
+        function animateTitle() {
+            document.title = text;
+            text = text.substring(1) + text.charAt(0); 
+            setTimeout(animateTitle, speed);
+        }
+
+        animateTitle(); 
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -204,6 +216,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
