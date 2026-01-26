@@ -55,12 +55,11 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-red);
-    letter-spacing: 3px;
-    text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
 
 .terminal-symbol {
     color: var(--accent-green);
@@ -718,3 +717,4 @@ section {
         padding: 1.5rem;
     }
 }
+
