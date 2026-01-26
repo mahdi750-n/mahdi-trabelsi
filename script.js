@@ -67,5 +67,5 @@ if (window.innerWidth > 768) {
   }
  });
 }
-function soon () 
-{ alert ('this page web is under maintenance') } 
+function sonn (){ alert("This page is under maintenance"); }
+
