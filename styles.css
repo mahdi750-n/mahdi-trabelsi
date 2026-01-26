@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-:root {
+* {
     --primary-red: #ff0000;
     --dark-red: #cc0000;
     --light-red: #ff3333;
@@ -748,5 +748,6 @@ body {
   cursor: pointer;
   font-size: 18px;
 }
+
 
 
