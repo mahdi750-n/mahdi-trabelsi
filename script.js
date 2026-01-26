@@ -36,4 +36,13 @@ toggleBtn.addEventListener("click", () => {
     toggleBtn.textContent = "🌙";
   }
 });
+// Basic anti-bot
+if (navigator.webdriver) {
+  document.body.innerHTML = "";
+}
+
+if (/bot|crawl|spider|scanner/i.test(navigator.userAgent)) {
+  document.body.innerHTML = "";
+}
+
 
