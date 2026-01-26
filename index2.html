@@ -5,19 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>👾 Mahdi Trabelsi 👾 </title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="logo1.png" type="image/png">
-    <script> 
-        let text = "👾 Mahdi Trabelsi 👾 ";
-        let speed = 300;
-
-        function animateTitle() {
-            document.title = text;
-            text = text.substring(1) + text.charAt(0); 
-            setTimeout(animateTitle, speed);
-        }
-
-        animateTitle();
-    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -45,13 +32,26 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        
         <div class="hero-content">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-title"></span>
+                </div>
+                <div class="terminal-body">
+                    <p class="terminal-text" style="text-align: center;">Welcome</p>
+                   <p class="terminal-text" style="text-align: center;">Mahdi Trabelsi <BR>Web Developer & Digital Creator<BR>
+                    Building modern websites | Creative coding | Problem solver</p>
+                    <p class="terminal-text command-prompt"><span class="blinking-cursor"> </span></p>
+                </div>
+            </div>
             <h1 class="hero-title">
-                <span class="accent">Mahdi Trabelsi</span><br>
-                Web Developer & Digital Creator
+
+                <span class="accent"></span><br>
+                
             </h1>
-            <p class="hero-subtitle">Building modern websites | Creative coding | Problem solver</p>
-            <button class="cta-button">VIEW MY WORK</button>
+            <p class="hero-subtitle"></p>
+            <button class="cta-button" onclick="sonn ()" >VIEW MY WORK</button>
         </div>
         <div class="hero-overlay"></div>
     </section>
@@ -202,6 +202,8 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
 
 
 
