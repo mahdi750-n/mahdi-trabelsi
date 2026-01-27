@@ -1,3 +1,10 @@
+function song {
+  const audio = document.getElementById("bgAudio");
+
+  
+    audio.volume = 0.5;   // تنجم تنقص أو تزّيد
+    audio.play();
+}
 function playIntro(){
  const intro = document.getElementById("intro");
  if (intro) intro.play();
@@ -68,4 +75,5 @@ if (window.innerWidth > 768) {
  });
 }
 function sonn (){ alert("This page is under maintenance"); }
+
 
