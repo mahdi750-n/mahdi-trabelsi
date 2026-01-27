@@ -14,19 +14,11 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-<script>
-  const audio = document.getElementById("bgAudio");
 
-  
-    audio.volume = 0.5;   // تنجم تنقص أو تزّيد
-    audio.play();
-    enter.style.display = "none";
-  
-</script>
 
 
 </head>
-<body>
+<body onload="song">
     <!-- Navigation -->
     <audio id="bgAudio" loop>
   <source src="audio.mp3" type="audio/mpeg">
@@ -232,6 +224,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
