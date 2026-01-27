@@ -1,4 +1,4 @@
-function song {
+function song() {
   const audio = document.getElementById("bgAudio");
 
   
@@ -75,5 +75,6 @@ if (window.innerWidth > 768) {
  });
 }
 function sonn (){ alert("This page is under maintenance"); }
+
 
 
