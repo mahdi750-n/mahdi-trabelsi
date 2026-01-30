@@ -75,6 +75,25 @@ if (window.innerWidth > 768) {
  });
 }
 function sonn (){ alert("This page is under maintenance"); }
+const form = document.getElementById("contactForm");
+
+if (form) {
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_vutbrly",
+      "template_0tlyjqh",
+      this
+    ).then(() => {
+      alert("✅ Message sent successfully!");
+      form.reset();
+    }).catch(() => {
+      alert("❌ Failed to send message.");
+    });
+  });
+}
+
 
 
 
