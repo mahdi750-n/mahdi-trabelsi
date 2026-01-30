@@ -75,24 +75,22 @@ if (window.innerWidth > 768) {
  });
 }
 function sonn (){ alert("This page is under maintenance"); }
-const form = document.getElementById("contactForm");
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-if (form) {
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    emailjs.sendForm(
-      "service_vutbrly",
-      "template_0tlyjqh",
-      this
-    ).then(() => {
-      alert("✅ Message sent successfully!");
-      form.reset();
-    }).catch(() => {
-      alert("❌ Failed to send message.");
-    });
+  emailjs.sendForm(
+    "service_vutbrly",
+    "template_0tlyjqh",
+    this
+  ).then(() => {
+    alert("✅ Message sent successfully!");
+    this.reset();
+  }).catch((error) => {
+    alert("❌ Message not sent");
+    console.log(error);
   });
-}
+});
+
 
 
 
